@@ -186,7 +186,7 @@
  * THERMAL_PROTECTION_HYSTERESIS and/or THERMAL_PROTECTION_PERIOD
  */
 #if ENABLED(THERMAL_PROTECTION_HOTENDS)
-#define THERMAL_PROTECTION_PERIOD 60     // Seconds
+#define THERMAL_PROTECTION_PERIOD 30     // Seconds
 #define THERMAL_PROTECTION_HYSTERESIS 10 // Degrees Celsius
 
 #define ADAPTIVE_FAN_SLOWING // Slow part cooling fan if temperature drops
@@ -206,7 +206,7 @@
    * and/or decrease WATCH_TEMP_INCREASE. WATCH_TEMP_INCREASE should not be set
    * below 2.
    */
-#define WATCH_TEMP_PERIOD 20  // Seconds
+#define WATCH_TEMP_PERIOD 60  // Seconds
 #define WATCH_TEMP_INCREASE 2 // Degrees Celsius
 #endif
 
@@ -430,8 +430,8 @@
  *
  * Define one or both of these to override the default 0-255 range.
  */
-//#define FAN_MIN_PWM 50
-//#define FAN_MAX_PWM 128
+// #define FAN_MIN_PWM 50
+#define FAN_MAX_PWM 210
 
 /**
  * FAST PWM FAN Settings
@@ -1164,13 +1164,13 @@
 //#define LCD_TIMEOUT_TO_STATUS 15000
 
 // Add an 'M73' G-code to set the current percentage
-//#define LCD_SET_PROGRESS_MANUALLY
+#define LCD_SET_PROGRESS_MANUALLY
 
 // Show the E position (filament used) during printing
 //#define LCD_SHOW_E_TOTAL
 
 #if ENABLED(SHOW_BOOTSCREEN)
-#define BOOTSCREEN_TIMEOUT 2000 // (ms) Total Duration to display the boot screen(s)
+#define BOOTSCREEN_TIMEOUT 1000 // (ms) Total Duration to display the boot screen(s)
 #endif
 
 #if EITHER(SDSUPPORT, LCD_SET_PROGRESS_MANUALLY) && ANY(HAS_MARLINUI_U8GLIB, HAS_MARLINUI_HD44780, IS_TFTGLCD_PANEL)
@@ -1729,7 +1729,7 @@
  * the probe to be unable to reach any points.
  */
 #if PROBE_SELECTED && !IS_KINEMATIC
-//#define PROBING_MARGIN_LEFT PROBING_MARGIN
+#define PROBING_MARGIN_LEFT 60
 //#define PROBING_MARGIN_RIGHT PROBING_MARGIN
 //#define PROBING_MARGIN_FRONT PROBING_MARGIN
 //#define PROBING_MARGIN_BACK PROBING_MARGIN
